@@ -1,0 +1,17 @@
+@import '../../static/sccs/vars';
+
+.header {
+   padding: 3rem 0;
+   margin-bottom: 3rem;
+   background-color: $secondary;
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
+
+.login {
+   margin-right: 2rem;
+}

@@ -1,0 +1,60 @@
+@import './vars';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $main;
+  font-size: 62.5%;
+  color: $white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.wrapper {
+  font-size: 1.8rem;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-column-gap: 3rem;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 119rem;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  background: $contrast;
+}
