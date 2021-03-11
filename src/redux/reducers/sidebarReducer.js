@@ -6,6 +6,9 @@ const initialState = {
     ]
 }
 
-export default (state = initialState, action) => {
+// Reducer body
+const sidebarReducer = (state = initialState, action) => {
     return state
 }
+
+export default sidebarReducer;

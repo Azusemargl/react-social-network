@@ -21,6 +21,14 @@ code {
     monospace;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -32,29 +40,45 @@ a {
   text-decoration: inherit;
 }
 
-button {
-  border: none;
+button, input, textarea {
   outline: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page {
+  font-size: 1.6rem;
 }
 
 .wrapper {
-  font-size: 1.8rem;
+  margin-top: 8rem;
 
   &__inner {
+    min-height: calc(100vh - 12rem);
     display: grid;
     grid-template-columns: 2fr 10fr;
-    grid-column-gap: 3rem;
+    grid-column-gap: 2rem;
   }
 }
 
 .container {
   width: 100%;
-  max-width: 119rem;
+  max-width: 96rem;
   padding: 0 2rem;
   margin: auto;
 }
 
-.btn {
-  padding: 1rem 3rem;
-  background: $contrast;
+.content {
+  height: 100%;
+  margin-top: 2rem;
+  padding: 3rem;
+  background-color: $postGray;
+  box-shadow: 0 0 5px rgba($main, 0.4);
+  border-radius: 0.5rem;
+  position: relative;
 }

@@ -1,9 +1,15 @@
 @import '../../static/sccs/vars';
 
 .header {
-   padding: 3rem 0;
-   margin-bottom: 3rem;
+   width: 100%;
+   height: 8rem;
+   display: flex;
    background-color: $secondary;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: $index-1;
 
    &__inner {
       display: flex;
@@ -12,6 +18,12 @@
    }
 }
 
-.login {
-   margin-right: 2rem;
+.auth {
+   display: flex;
+
+   &__item {
+      &:first-child {
+         margin-right: 2rem;
+      }
+   }
 }

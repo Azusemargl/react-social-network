@@ -1,0 +1,33 @@
+@import '../../../static/sccs/vars';
+
+.field {
+  border-bottom: 0.2rem solid $contrast;
+  transition: border-bottom .2s linear;
+
+  &.error {
+    border-bottom: 0.2rem solid $warning;
+  }
+
+  &:focus {
+    border-bottom: 0.2rem solid lighten($contrast, 20%);
+  }
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+  min-height: 5rem;
+  background-color: $gray;
+ }
+ 
+.form__control {
+  margin: 2rem 0;
+}
+
+.error-text {
+  color: $warning;
+  font-style: italic;
+  font-size: 1.6rem;
+}

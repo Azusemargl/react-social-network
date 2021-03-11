@@ -1,6 +1,15 @@
-// theme config
-$main:      #131313;
+// Theme config
+$main:      #161616;
 $secondary: #101010;
-$white:     #f9f9f9;
+$postGray:  #1d1d1d;
+$gray:      #373737;
+$postWhite: #d7d7d7;
+$white:     #f0f0f0;
 
-$contrast:  linear-gradient(135deg, rgba(92,14,226, 1) 0%, rgba(119,17,162, 1) 100%);
+$gradient:   linear-gradient(135deg, rgb(92, 14, 225) 0%, rgba(119,17,162, 1) 100%);
+$contrast:  #5c0ee1;
+
+$warning:   #ca2222;
+
+// Z-index
+$index-1: 1;

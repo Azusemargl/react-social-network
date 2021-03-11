@@ -2,6 +2,8 @@ const initialState = {
 
 }
 
-export default (state = initialState, action) => {
+const headerReducer = (state = initialState, action) => {
     return state
 }
+
+export default headerReducer;

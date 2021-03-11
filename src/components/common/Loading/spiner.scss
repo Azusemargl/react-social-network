@@ -1,0 +1,42 @@
+@import '../../../static/sccs/vars';
+
+.spiner {
+   width: 7rem;
+   height: 7rem;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   z-index: $index-1;
+   overflow: hidden;
+   transform: translate(-50%, -50%);
+   animation: spiner 1s infinite;
+
+   &:after, &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      z-index: $index-1;
+      transform: translate(-50%, -50%);
+   }
+
+   &:after {
+      width: 2rem;
+      height: 2rem;
+      background-color: $postGray;
+      top: 0;
+   }
+
+   &:before {
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      border: 2rem solid $contrast;
+      top: 50%;
+   }
+}
+
+@keyframes spiner {
+   from {transform: translate(-50%, -50%) rotate(0deg);}
+   to {transform: translate(-50%, -50%) rotate(360deg);}
+}

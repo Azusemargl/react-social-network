@@ -9,6 +9,16 @@ const instance = axios.create({
    
 });
 
+const newInstance = axios.create({
+   withCredentials: true,
+   responseType: "json",
+   baseURL: 'http://loacalhost:8080/api/',
+   headers: {
+      "API-KEY": "semargl"
+   },
+   
+});
+
 export const usersAPI = {
    getUsers(page = 1, count = 10) {
       return instance.get(`users?page=${page}&count=${count}`)
@@ -19,5 +29,14 @@ export const usersAPI = {
 
             return response.error;
          });
+   },
+   getAction(userId) {
+      return instance.post(`follow/${userId}`);
+   },
+}
+
+export const authAPI = {
+   me(body) {
+      return instance.post(`auth`, {body});
    },
 }

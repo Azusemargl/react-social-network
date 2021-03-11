@@ -11,11 +11,13 @@ const Sidebar = ({links}) => {
    ));
 
    return (
-      <nav>
-         <ul className="menu">
-            {navigation}
-         </ul>
-      </nav>
+      <div className="content">
+         <nav className="navigation">
+            <ul className="menu">
+               {navigation}
+            </ul>
+         </nav>
+      </div>
    );
 };
 

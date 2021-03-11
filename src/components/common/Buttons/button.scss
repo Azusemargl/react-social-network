@@ -1,0 +1,25 @@
+@import '../../../static/sccs/vars';
+
+.btn {
+  padding: 1rem 3.5rem;
+  background: $gradient;
+  border-radius: 2.5rem;
+  transition: box-shadow .2s linear;
+
+  &-submit {
+    background: transparent;
+    border: .2rem solid $contrast;
+  }
+
+  &-unfollow {
+    border: .2rem solid $warning;
+
+    &:hover {
+      box-shadow: 0 0 1rem lighten($warning, 5%) !important;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 1rem lighten($contrast, 5%);
+  }
+}

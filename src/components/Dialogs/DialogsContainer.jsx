@@ -7,7 +7,7 @@ import Dialogs from './Dialogs';
 // Container component
 const DialogsContainer = ({props}) => {
    return (
-      <div>
+      <div className="content">
          <Dialogs />
       </div>
    );

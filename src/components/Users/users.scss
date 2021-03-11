@@ -1,0 +1,30 @@
+.users {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.user {
+   width: 18rem;
+   padding: 1rem;
+   margin: 1rem;
+   text-align: center;
+
+   &__avatar {
+      width: 80%;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+   }
+
+   &__image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+   }
+
+   &__name {
+      margin: 1rem 0;
+   }
+}

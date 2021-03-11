@@ -1,0 +1,63 @@
+@import '../../static/sccs/vars';
+
+.posts {
+   margin: 4rem 0;
+}
+
+.post {
+   width: 100%;
+   border-bottom: 1px solid $gray;
+   padding-bottom: 1rem;
+
+   &__content {
+      padding: 1rem 0;
+   }
+
+   &__info {
+      display: flex;
+      align-items: center;
+   }
+
+   &__author-avatar {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1.5rem;
+      background: $gradient;
+      border: 0.4rem solid lighten($contrast, 10%);
+      border-radius: 50%;
+   }
+
+   &__author-name {
+      line-height: 1;
+   }
+
+   &__author-nickname {
+      font-size: 1.4rem;
+      font-style: italic;
+      color: $postWhite;
+   }
+
+   &__text {
+      font-size: 1.6rem;
+      color: $postWhite;
+   }
+
+   &__time {
+      font-size: 1.4rem;
+      font-style: italic;
+   }
+
+   &:not(:last-child) {
+      margin-bottom: 2rem;
+   }
+}
+
+.status {
+   margin-top: 0.5rem;
+   color: $postWhite;
+
+   &__input {
+      background: transparent;
+      border-bottom: 1px solid $gray;
+   }
+}

@@ -2,6 +2,8 @@ const initialState = {
 
 }
 
-export default (state = initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
     return state
 }
+
+export default dialogsReducer;
