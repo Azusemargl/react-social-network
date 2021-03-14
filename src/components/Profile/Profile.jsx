@@ -5,7 +5,7 @@ import './profile.scss';
 import Status from './Status';
 
 // Component
-const Profile = ({posts, addPost}) => {
+const Profile = ({login, posts, addPost}) => {
    
    // State mapping
    const postsArray = posts.map(post => <Post key={post.id} post={post}></Post>);
@@ -23,7 +23,7 @@ const Profile = ({posts, addPost}) => {
    return (
       <div>
          <div className="content">
-            <h1>Профиль</h1>
+            <h1>{login}</h1>
             <Status />
             <PostReduxForm onSubmit={onAddPost} />
          </div>

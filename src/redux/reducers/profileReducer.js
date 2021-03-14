@@ -1,6 +1,10 @@
+import { profileAPI } from "../../api/api";
+
 const ADD_POST = 'profile/ADD-POST';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
+    fullName: null,
     posts: [
         {
             id: 1,
@@ -26,15 +30,26 @@ const profileReducer = (state = initialState, action) => {
             };
 
             return {
-                ...state,
-                posts: [...state.posts, newPost]
+                ...state, posts: [...state.posts, newPost]
             };
+        case SET_USER_PROFILE:
+            return {
+                ...state, fullName: action.payload.fullName
+            }
         default:
             return state;
     }
 };
 
 // Action creations
+export const setUserProfile = payload => ({type: SET_USER_PROFILE, payload});
 export const addPost = (text, date) => ({type: ADD_POST, payload: {text, date}});
+
+// Thunks
+export const userProfileRequeire = userId => async dispatch => {
+    const response = await profileAPI.userProfile(userId);
+    
+    dispatch(setUserProfile(response.data));
+};
 
 export default profileReducer;

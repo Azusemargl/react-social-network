@@ -9,7 +9,7 @@ import SidebarContainer from './components/Sidebar/SidebarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import Registration from './pages/Registration';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -22,10 +22,10 @@ const App = () => {
               <div className="wrapper__inner">
                 <SidebarContainer />
                 <div className="wrapper__content">
-                  <Route path='/profile' exact render={() => <ProfileContainer />} />
+                  <Route path='/profile/:userId?' exact render={() => <ProfileContainer />} />
                   <Route path='/dialogs' exact render={() => <DialogsContainer />} />
                   <Route path='/users' exact render={() => <UsersContainer />} />
-                  <Route path='/registration' exact render={() => <Registration />} />
+                  <Route path='/login' exact render={() => <Login />} />
                 </div>
               </div>
             </div>

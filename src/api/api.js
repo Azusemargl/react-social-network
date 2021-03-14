@@ -9,34 +9,32 @@ const instance = axios.create({
    
 });
 
-const newInstance = axios.create({
-   withCredentials: true,
-   responseType: "json",
-   baseURL: 'http://loacalhost:8080/api/',
-   headers: {
-      "API-KEY": "semargl"
+export const authAPI = {
+   me() {
+      return instance.get(`auth/me`);
    },
-   
-});
+   login(email, password, rememeberMe = false) {
+      return instance.post(`auth/login`, {email, password, rememeberMe});
+   },
+   logout() {
+      return instance.delete(`auth/login`);
+   }
+};
+
+export const profileAPI = {
+   userProfile(userId) {
+      return instance.get(`profile/${userId}`);
+   }
+};
 
 export const usersAPI = {
    getUsers(page = 1, count = 10) {
-      return instance.get(`users?page=${page}&count=${count}`)
-         .then(response => {
-            if (response.status === 200) {
-               return response.data;
-            }
-
-            return response.error;
-         });
+      return instance.get(`users?page=${page}&count=${count}`);
    },
-   getAction(userId) {
+   follow(userId) {
       return instance.post(`follow/${userId}`);
    },
-}
-
-export const authAPI = {
-   me(body) {
-      return instance.post(`auth`, {body});
+   unfollow(userId) {
+      return instance.delete(`follow/${userId}`);
    },
-}
+};

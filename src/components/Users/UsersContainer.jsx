@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { usersRequest, requestAction } from '../../redux/reducers/usersReducer';
+import { usersRequest, followAction, unfollowAction } from '../../redux/reducers/usersReducer';
 import Spiner from '../common/Loading/Spiner';
 
 // Component imports
 import Users from './Users';
 
 // Container component
-const UsersContainer = ({init, users, usersRequest, requestAction}) => {
+const UsersContainer = (props) => {
+
+   // Set users after init
    React.useEffect(() => {
-      return usersRequest(1, 50);
+      return props.usersRequest(1, 50);
    }, []);
 
-   if (!init) {
+   // Loading before users init
+   if (!props.init) {
       return (
          <div className="content">
             <Spiner />
@@ -22,7 +25,7 @@ const UsersContainer = ({init, users, usersRequest, requestAction}) => {
 
    return (
       <div className="content">
-         <Users users={users} requestAction={requestAction} />
+         <Users users={props.users} followAction={props.followAction} />
       </div>
    );
 };
@@ -34,4 +37,4 @@ const mapStateToProps = (state) => ({
 });
 
 // Export Component
-export default connect(mapStateToProps, {usersRequest, requestAction})(UsersContainer);
+export default connect(mapStateToProps, {usersRequest, followAction, unfollowAction})(UsersContainer);

@@ -4,25 +4,31 @@ import { authRequest } from '../redux/reducers/authReducer';
 import { FiledCreator } from '../components/common/Forms/FormCreator';
 import Button from '../components/common/Buttons/Button';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 const Input = FiledCreator("input");
 
-const RegistrationForm = ({handleSubmit}) => {
+const LoginForm = ({handleSubmit}) => {
    return (
       <form onSubmit={handleSubmit}>
          <Field component={Input} name="email" placeholder="E-mail" />
          <Field component={Input} name="password" type="password" placeholder="Пароль" />
-         <Button>Зарегистрироваться</Button>
+         <Field component={Input} name="password" type="checkbox" />
+         <Button>Войти</Button>
       </form>
    )
 }
 
-const LoginReduxForm = reduxForm({form: 'registrationForm'})(RegistrationForm);
+const LoginReduxForm = reduxForm({form: 'loginForm'})(LoginForm);
 
-const Registration = ({authRequest}) => {
+const Login = ({isAuth, authRequest}) => {
    const onLoginAction = (value) => {
       return authRequest(value);
    };
+
+   if (isAuth) {
+      return <Redirect to="/profile" />
+   }
 
    return (
       <div className="login">
@@ -31,6 +37,10 @@ const Registration = ({authRequest}) => {
    )
 }
 
-const RegistrationContainer = connect(null, {authRequest})(Registration)
+const mapStateToProps = state => ({
+   isAuth: state.auth.isAuth
+});
+
+const RegistrationContainer = connect(mapStateToProps, {authRequest})(Login)
 
 export default RegistrationContainer;
