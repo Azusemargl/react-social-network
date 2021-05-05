@@ -1,5 +1,13 @@
 @import '../../../static/sccs/vars';
 
+.form {
+  &-error {
+    .field {
+      border-bottom: 0.2rem solid $warning;
+    }
+  }
+}
+
 .field {
   border-bottom: 0.2rem solid $contrast;
   transition: border-bottom .2s linear;
@@ -24,6 +32,27 @@
  
 .form__control {
   margin: 2rem 0;
+
+  input[type="checkbox"] {
+    min-height: auto;
+    margin: 1rem 1rem 1rem 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .form__control {
+    margin: 0;
+  }
+}
+
+.error-area {
+  margin-bottom: 3rem;
 }
 
 .error-text {

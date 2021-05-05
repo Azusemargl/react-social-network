@@ -20,10 +20,19 @@
 
 .auth {
    display: flex;
+   align-items: center;
 
    &__item {
       &:first-child {
          margin-right: 2rem;
       }
    }
+}
+
+.logout-btn {
+   background: transparent;
+}
+
+.logout-img {
+   width: 3rem;
 }
